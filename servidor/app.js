@@ -17,7 +17,7 @@ mongoose.connection.once('open',()=>{console.log("Se ha conectado correctamente"
 
 var app = express();
 
-// view engine setup kk
+// view engine setup bbbb
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
