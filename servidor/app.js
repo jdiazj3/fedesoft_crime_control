@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var estudianteRouter=require('./routes/estudianteRouter');
+var ciudadanoRouter=require('./routes/ciudadanoRouter');
+
 var mongoose=require('mongoose');
 var config=require('./config');
 var db=mongoose.connect('mongodb://localhost:27017/claseServidor');

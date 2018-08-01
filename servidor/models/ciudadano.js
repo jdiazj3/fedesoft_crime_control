@@ -24,4 +24,4 @@ var ciudadano = new esquema({
         validate: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     }
 });
-module.exports = mongoose.model('usuario', usuario);
+module.exports = mongoose.model('ciudadano', ciudadano);
