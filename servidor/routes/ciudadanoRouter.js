@@ -18,8 +18,22 @@ router.post('/registro', function(req, res, next) {
            } 
    
   res.json(ciudadano);
+  
 }
 })
 });
 
+/* POST users update. */
+router.post('/update', function(req, res, next) {
+  ciudadano.update(req.body,(err,ciudadano)=>{
+    if(err) {next(err)}
+     else{
+       var ok={
+         id:ciudadano._id
+           } 
+   
+  res.json(ciudadano);
+}
+})
+});
 module.exports = router;
