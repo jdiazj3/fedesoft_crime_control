@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var estudianteRouter=require('./routes/estudianteRouter');
 var ciudadanoRouter=require('./routes/ciudadanoRouter');
+var comunitarioRouter=require('./routes/comunitarioRouter');
 
 var mongoose=require('mongoose');
 var config=require('./config');
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/asdfs',estudianteRouter);
 app.use('/ciudadano',ciudadanoRouter);
+app.use('/ciudadano',comunitarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
