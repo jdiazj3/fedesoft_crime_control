@@ -21,6 +21,7 @@ router.post('/registro',(req,res,next)=>{
   })
 });
 
+<<<<<<< HEAD
 router.post('/signup', (req, res, next) => {
   console.log(req.body)
   Usuario.register(new Usuario({username: req.body.username}), 
@@ -48,4 +49,19 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.json({success: true,token:token ,status: 'You are successfully logged in!'});
 });
+=======
+router.post('/update',(req,res,next)=>{
+  Usuario.update(req.body,(err,usuario)=>{
+    if(err){ next(err)}
+    else{
+      var ok={
+        estado:"ok",
+        id:usuario._id
+      }
+      res.json(ok)
+    }
+  })
+});
+
+>>>>>>> 10a17d1f0af44455da61d56263a64b41d7a0f008
 module.exports = router;

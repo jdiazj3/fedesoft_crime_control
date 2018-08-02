@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var estudianteRouter=require('./routes/estudianteRouter');
 var ciudadanoRouter=require('./routes/ciudadanoRouter');
+var comunitarioRouter=require('./routes/comunitarioRouter');
+var agenteRouter=require('./routes/agenteRouter');
 
 var passport = require('passport');
 var authenticate = require('./authenticate');
@@ -25,7 +27,7 @@ mongoose.connection.once('open',()=>{console.log("Se ha conectado correctamente"
 
 var app = express();
 
-// view engine setup kk
+// view engine setup bbbb
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -42,6 +44,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/asdfs',estudianteRouter);
 app.use('/ciudadano',ciudadanoRouter);
+app.use('/comunitario',comunitarioRouter);
+app.use('/agente',agenteRouter);
 
 
 
