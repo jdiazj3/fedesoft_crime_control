@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+var authenticate = require('../authenticate');
 const estudianteRouter = express.Router();
 
 estudianteRouter.use(bodyParser.json());
@@ -11,6 +11,10 @@ estudianteRouter.route('/')
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     next();
+})
+.get(authenticate.verifyUser,(req,res,next)=>{
+res.end("errr unauthorized");
+
 })
 .get((req,res,next) => {
     res.end('Este metodo retornara la lista de estudiantes');

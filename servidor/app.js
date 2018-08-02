@@ -9,9 +9,17 @@ var usersRouter = require('./routes/users');
 var estudianteRouter=require('./routes/estudianteRouter');
 var ciudadanoRouter=require('./routes/ciudadanoRouter');
 
+var passport = require('passport');
+var authenticate = require('./authenticate');
+
+
+
+
+
+
 var mongoose=require('mongoose');
 var config=require('./config');
-var db=mongoose.connect('mongodb://localhost:27017/claseServidor');
+var db=mongoose.connect('mongodb://localhost:27017/pruebaDB');
 mongoose.connection.on('error',()=>{console.log("Base de datos en problemas")})
 mongoose.connection.once('open',()=>{console.log("Se ha conectado correctamente")})
 
@@ -27,10 +35,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/asdfs',estudianteRouter);
 app.use('/ciudadano',ciudadanoRouter);
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
