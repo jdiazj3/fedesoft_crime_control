@@ -23,4 +23,4 @@ var usuario = new Esquema({
     }
 });
 usuario.plugin(passportLocalMongoose);
-module.exports = mongoose.model('usuario', usuario);
+module.exports = mongoose.model('Usuario', usuario);
