@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 var esquema = mongoose.Schema;
-
-
 var comunitario = new esquema({
     username: {
         type: String,
@@ -23,6 +21,7 @@ var comunitario = new esquema({
         unique: true,
         required: 'Email address is required',
         validate: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    }
+    }, 
+
 });
 module.exports = mongoose.model('comunitario', comunitario);

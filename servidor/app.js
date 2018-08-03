@@ -14,11 +14,6 @@ var agenteRouter=require('./routes/agenteRouter');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 
-
-
-
-
-
 var mongoose=require('mongoose');
 var config=require('./config');
 var db=mongoose.connect('mongodb://localhost:27017/pruebaDB');
@@ -42,7 +37,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/asdfs',estudianteRouter);
+app.use('/estudiante',estudianteRouter);
 app.use('/ciudadano',ciudadanoRouter);
 app.use('/comunitario',comunitarioRouter);
 app.use('/agente',agenteRouter);
