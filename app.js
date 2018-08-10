@@ -20,6 +20,7 @@ var db=mongoose.connect(config.mongoUrl);
 mongoose.connection.on('error',()=>{console.log("Base de datos en problemas")})
 mongoose.connection.once('open',()=>{console.log("Se ha conectado correctamente")})
 
+
 var app = express();
 
 // view engine setup bbbb
