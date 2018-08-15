@@ -16,9 +16,10 @@ var authenticate = require('./authenticate');
 
 var mongoose=require('mongoose');
 var config=require('./config');
-var db=mongoose.connect('mongodb://localhost:27017/pruebaDB');
+var db=mongoose.connect(config.mongoUrl);
 mongoose.connection.on('error',()=>{console.log("Base de datos en problemas")})
 mongoose.connection.once('open',()=>{console.log("Se ha conectado correctamente")})
+
 
 var app = express();
 
