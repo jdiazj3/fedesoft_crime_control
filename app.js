@@ -28,15 +28,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors());
 
-app.all('*', (req, res, next) => {
-        if (req.secure) {
-            return next;
-        } else {
-            res.redirect(301, 'http://' + req.hostname + req.url);
-        }
-    }
-
-)
+// app.all('*', (req, res, next) => {
+//         if (req.secure) {
+//             return next;
+//         } else {
+//             res.redirect(301, 'http://' + req.hostname + req.url);
+//         }
+//     }
+// )
 
 app.use(logger('dev'));
 app.use(express.json());
