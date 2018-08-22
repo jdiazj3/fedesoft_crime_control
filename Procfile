@@ -1,1 +1,1 @@
-web:git add . web MONGO_DEV=mongodb+srv://jdiaz:fedesoft@cluster0-z9ihm.mongodb.net/crime node ./bin/www
+web: MONGO_DEV=mongodb+srv://jdiaz:fedesoft@cluster0-z9ihm.mongodb.net/crime node ./bin/www
