@@ -22,11 +22,11 @@ mongoose.connection.once('open', () => { console.log("Se ha conectado correctame
 
 var app = express();
 
-app.use(cors());
 
 // view engine setup bbbb
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(cors());
 
 app.all('*', (req, res, next) => {
         if (req.secure) {
