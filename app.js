@@ -10,7 +10,6 @@ var estudianteRouter = require('./routes/estudianteRouter');
 var ciudadanoRouter = require('./routes/ciudadanoRouter');
 var comunitarioRouter = require('./routes/comunitarioRouter');
 var agenteRouter = require('./routes/agenteRouter');
-
 var passport = require('passport');
 var authenticate = require('./authenticate');
 var cors = require('cors');
