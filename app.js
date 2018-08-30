@@ -28,14 +28,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors());
 
-// app.all('*', (req, res, next) => {
-//         if (req.secure) {
-//             return next;
-//         } else {
-//             res.redirect(301, 'http://' + req.hostname + req.url);
-//         }
-//     }
-// )
+app.all('*', function(req, res, next) {
+    if (req.headers['x-forwarded-proto'] != 'https' && req.app.get('env') != 'development') {
+        res.redirect(307, 'http://' + req.hostname + req.url);
+    } else {
+        next();
+    }
+});
 
 app.use(logger('dev'));
 app.use(express.json());
